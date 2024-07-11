@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class Transposematrix {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt(); // number of rows for matrix a
+        int m = sc.nextInt(); // number of columns for matrix a
+
+        // Initialize matrix a and b
+        int[][] a = new int[n][m];
+        int[][] b = new int[m][n]; // Transpose of matrix a
+
+        // Input matrix a
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                a[i][j] = sc.nextInt();
+            }
+        }
+
+        // Compute transpose of matrix a and store in matrix b
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                b[j][i] = a[i][j];
+            }
+        }
+
+        // Output matrix b (transpose of matrix a)
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(b[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
